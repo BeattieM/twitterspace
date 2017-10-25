@@ -38,6 +38,12 @@ gem 'omniauth-twitter'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'reek', '~> 4.7.2'
+  gem 'flog', '~> 4.6.1'
+  gem 'flay', '~> 2.10.0'
+  gem 'rubocop', '~> 0.50.0'
+  gem 'rails_best_practices', '~> 1.19.0'
+  gem 'brakeman', '~> 4.0.1', :require => false
 end
 
 group :development do

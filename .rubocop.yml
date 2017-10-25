@@ -1,0 +1,23 @@
+AllCops:
+  Exclude:
+    - 'db/*.rb'
+    - 'db/*/*.rb'
+    - 'lint'
+    - 'Gemfile'
+    - 'bin/*'
+  TargetRubyVersion: 2.4.2
+EmptyLinesAroundModuleBody:
+  Enabled: false
+EmptyLinesAroundClassBody:
+  Enabled: false
+LineLength:
+  Max: 120
+MethodLength:
+  Max: 10
+BlockLength:
+  Max: 5
+  Exclude:
+    - 'config/*.rb'
+    - 'config/*/*.rb'
+Documentation:
+  Enabled: false
