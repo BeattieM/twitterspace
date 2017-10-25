@@ -16,7 +16,7 @@ class TweetsController < ApplicationController
   end
 
   def create
-    twitter_client.update(params[:tweet][:text])
+    twitter_client.update(params[:tweet][:status])
     fetch_new_tweets
     redirect_to root_path
   end
