@@ -46,6 +46,10 @@ body {
   padding-bottom:10px;
 }
 
+#content-header.expand-header {
+  min-height: 160px;
+}
+
 #content-footer {
   height: 50px;
   width: 100%;
@@ -110,13 +114,6 @@ body {
 .btn-success:active:focus {
   background-color: #2AA2EF;
   border-color: #2AA2EF;
-}
-
-#pokeball {
-  width: 36px;
-  margin-left: 30px;
-  margin-right: 30px;
-  margin-top: 11px;
 }
 
 #submit-tweet {
