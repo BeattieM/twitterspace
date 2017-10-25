@@ -11,12 +11,12 @@ class TweetsController < ApplicationController
         fetch_new_tweets
       end
     end
-    @tweets = current_user ? Tweet.where(user: current_user).reverse : []
+    @tweets = current_user ? Tweet.where(owner: current_user).reverse : []
     @tweet = Tweet.new
   end
 
   def create
-    current_user.twitter_client.update(params[:tweet][:text])
+    twitter_client.update(params[:tweet][:text])
     fetch_new_tweets
     redirect_to root_path
   end
@@ -24,12 +24,20 @@ class TweetsController < ApplicationController
   private
 
   def fetch_new_tweets
-    client = current_user.twitter_client
-    tweets = client.home_timeline.reverse
-    current_tweet_ids = Tweet.where(user: current_user).pluck(:uid)
-    tweets.select! {|tweet| !current_tweet_ids.include? tweet.id.to_s}
+    tweets = twitter_client.home_timeline.reverse
+    current_tweet_ids = Tweet.where(owner: current_user).pluck(:uid)
+    tweets.reject! { |tweet| current_tweet_ids.include? tweet.id.to_s }
     tweets.each do |tweet|
-      Tweet.create(user: current_user, uid: tweet.id, json: tweet.to_h)
+      Tweet.create(owner: current_user, uid: tweet.id, json: tweet.to_h)
+    end
+  end
+
+  def twitter_client
+    Twitter::REST::Client.new do |config|
+      config.consumer_key        = ENV['TWITTER_KEY']
+      config.consumer_secret     = ENV['TWITTER_SECRET']
+      config.access_token        = current_user.token
+      config.access_token_secret = current_user.secret
     end
   end
 end

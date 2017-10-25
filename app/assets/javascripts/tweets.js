@@ -1,11 +1,11 @@
 $( document ).ready(function() {
   // Interactions for creating new Tweet 
-  $("#tweet_text").focus(function() {
+  $("#tweet_status").focus(function() {
     $("#submit-tweet").show();
     $("#content-header").addClass('expand-header');
   });
 
-  $("#tweet_text").blur(function() {
+  $("#tweet_status").blur(function() {
     if($(this).val()){
       $(this).addClass('has-text');
       $("#content-header").addClass('expand-header');
@@ -16,7 +16,7 @@ $( document ).ready(function() {
     }
   });
 
-  $("#tweet_text").keyup(function(){
+  $("#tweet_status").keyup(function(){
     if($(this).val()){
       $("#submit-tweet").prop("disabled",false);
     } else {

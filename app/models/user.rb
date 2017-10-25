@@ -2,6 +2,7 @@
 
 class User < ActiveRecord::Base
   has_many :tweets
+
   class << self
     def find_or_create_from_auth_hash(auth_hash)
       user = where(uid: auth_hash.uid).first_or_create
@@ -26,15 +27,6 @@ class User < ActiveRecord::Base
         profile_image: info.image,
         token: creds.token,
         secret: creds.secret }
-    end
-  end
-
-  def twitter_client
-    Twitter::REST::Client.new do |config|
-      config.consumer_key        = ENV['TWITTER_KEY']
-      config.consumer_secret     = ENV['TWITTER_SECRET']
-      config.access_token        = token
-      config.access_token_secret = secret
     end
   end
 end

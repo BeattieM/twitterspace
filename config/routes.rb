@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   delete 'session', to: 'sessions#destroy', as: 'destroy_user_session'
 
-  resources :tweets, only: [:index, :create]
+  resources :tweets, only: %i[index create]
   resources :sessions, only: %i[new create verify destroy] do
     collection do
       post 'verify'

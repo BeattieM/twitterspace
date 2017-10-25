@@ -47,6 +47,12 @@ group :development, :test do
   gem 'rubocop', '~> 0.50.0'
   gem 'rails_best_practices', '~> 1.19.0'
   gem 'brakeman', '~> 4.0.1', :require => false
+
+  gem 'rspec-rails'
+  gem 'rails-controller-testing'
+  gem 'database_cleaner'
+  gem 'simplecov', :require => false
+  gem 'shoulda-matchers'
 end
 
 group :development do
