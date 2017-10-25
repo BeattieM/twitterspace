@@ -1,6 +1,8 @@
-<div class="modal-content">
+<div class="modal-content" style="width: 30%;
+    margin: 0 auto;
+    margin-top: 20%;">
   <div class="modal-header" align="center">
-    <img id="img_logo" src="/images/pokeball.png">
+    <img id="img_logo" src="">
   </div>
   <div id="div-forms">
     <%= form_for(User.new, as: 'session', url: verify_sessions_path) do |f| %>

@@ -1,0 +1,126 @@
+html {
+  min-width: 800px;
+}
+
+body {
+  background-color: #F5F8FA;
+}
+
+.banner-spacer {
+  background-color:white;
+  height:50px;
+}
+
+.spacer-top {
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.25);
+}
+
+.spacer-bottom {
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.25);
+}
+
+.log-button {
+  margin-top: 8px;
+  float: right;
+  margin-right: 8px;
+  width: 100px;
+}
+
+#content {
+  width: 600px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#content-header {
+  min-height: 50px;
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+  border: 1px solid #e6ecf0;
+  background-color: #ffffff;
+}
+
+#content-header.logged-in {
+  padding-top:10px;
+  padding-bottom:10px;
+}
+
+#content-footer {
+  height: 50px;
+  width: 100%;
+  border-radius: 0 0 5px 5px;
+  border-left: 1px solid #e6ecf0;
+  border-right: 1px solid #e6ecf0; 
+  border-bottom: 1px solid #e6ecf0; 
+  background-color: #ffffff;
+}
+
+.tweet {
+  background: #fff;
+  border-left: 1px solid #e6ecf0;
+  border-right: 1px solid #e6ecf0; 
+  border-bottom: 1px solid #e6ecf0; 
+}
+
+.tweet-profile img {
+  vertical-align: top;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border: 0px solid #000000;
+}
+
+.tweet-profile {
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-top: 15px;
+}
+
+.tweet-content {
+  vertical-align: top;
+  width: 80%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 15px;
+  padding-left: 70px;
+  margin-top: -40px;
+}
+
+.btn-success {
+  background-color: #4AB3F4;
+  border-color: #4AB3F4;
+}
+
+.btn-success:hover {
+  background-color: #2AA2EF;
+  border-color: #2AA2EF;
+}
+
+.btn-success:active {
+  background-color: #2AA2EF;
+  border-color: #2AA2EF;
+}
+
+.btn-success:focus {
+  background-color: #2AA2EF;
+  border-color: #2AA2EF;
+}
+
+.btn-success:active:focus {
+  background-color: #2AA2EF;
+  border-color: #2AA2EF;
+}
+
+#pokeball {
+  width: 36px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 11px;
+}
+
+#submit-tweet {
+  float: right;
+  margin-top: 5px;
+  display: none;
+}

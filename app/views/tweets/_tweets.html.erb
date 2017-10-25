@@ -1,0 +1,32 @@
+<div id="tweets">
+  <% if tweets.count > 0 %>
+    <% tweets.each do |tweet| %>
+      <div class='tweet' id="<%= tweet.uid %>">
+        <div class='tweet-profile'>
+          <%= image_tag(tweet.json['user']['profile_image_url_https']) %> <span><b><%= tweet.json['user']['name'] %></b></span> <span>@<%= tweet.json['user']['screen_name'] %></span> - <span><%= tweet.json['created_at'].to_date.strftime("%b %m %Y") %></span>
+        </div>
+        <div class='tweet-content'>
+          <p id="tweet_<%= tweet.uid %>_description"><%= tweet.json['text'] %></p>
+          <% if tweet.json['entities']['media'] %>
+            <% tweet.json['entities']['media'].each do |media| %>
+              <%= image_tag(media['media_url_https'], height: media['sizes']['thumb']['h'], width: media['sizes']['thumb']['w']) %>
+            <% end %>
+          <% end %>
+          <br />
+          <span>Retweets: <%= tweet.json['retweet_count'] %></span> - <span>Likes: <%= tweet.json['favorite_count'] %></span>
+        </div>
+      </div>
+    <% end %>
+    <div class='tweet' id="no-tweets" style="display: none;">
+      <div style="text-align: center;width: 100%;height: 100px;line-height: 100px;">
+        <p>No tweets Available</p>
+      </div>
+    </div>
+  <% else  %>
+    <div class='tweet' id="no-tweets">
+      <div style="text-align: center;width: 100%;height: 100px;line-height: 100px;">
+        <p>No tweets Available</p>
+      </div>
+    </div>
+  <% end %>
+</div>

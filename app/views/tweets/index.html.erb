@@ -1,7 +1,18 @@
 <div class="banner-spacer spacer-top">
+  <span style="color:#2AA2EF;font-weight:bold;font-size:2em;margin-left:8px;">TwitterSpace</span>
   <% if current_user %>
     <%= link_to('Logout', destroy_user_session_path, :method => :delete, :class => "btn btn-success log-button") %>
   <% else %>
     <%= link_to('Login', new_session_path, :class => "btn btn-success log-button")  %>
   <% end %>
+</div>
+<div id='content'>
+  <div id="content-header" class="<%= 'logged-in' if current_user %>">
+    <% if current_user %>
+
+    <% end %>
+  </div>
+  <span id="current_user" class="<%= current_user ? current_user.id : 0 %>">
+  <%= render "tweets", tweets: @tweets %>
+  <div id="content-footer"></div>
 </div>

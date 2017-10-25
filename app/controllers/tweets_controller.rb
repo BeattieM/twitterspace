@@ -2,7 +2,8 @@
 
 class TweetsController < ApplicationController
   def index
-    fetch_new_tweets if current_user
+    # fetch_new_tweets if current_user && current_user.tweets.last.created_at <= Time.now - 5.minutes
+    @tweets = current_user ? Tweet.where(user: current_user).reverse : []
   end
 
   private
