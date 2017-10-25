@@ -3,7 +3,7 @@
     <% tweets.each do |tweet| %>
       <div class='tweet' id="<%= tweet.uid %>">
         <div class='tweet-profile'>
-          <%= image_tag(tweet.json['user']['profile_image_url_https']) %> <span><b><%= tweet.json['user']['name'] %></b></span> <span>@<%= tweet.json['user']['screen_name'] %></span> - <span><%= tweet.json['created_at'].to_date.strftime("%b %m %Y") %></span>
+          <%= image_tag(tweet.json['user']['profile_image_url_https']) %> <span><b><%= tweet.json['user']['name'] %></b></span> <span>@<%= tweet.json['user']['screen_name'] %></span> - <span><%= tweet.json['created_at'].to_date.strftime("%b %d %Y") %></span>
         </div>
         <div class='tweet-content'>
           <p id="tweet_<%= tweet.uid %>_description"><%= tweet.json['text'] %></p>

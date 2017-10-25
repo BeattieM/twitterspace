@@ -1,0 +1,7 @@
+<div class='tweet-profile'></div>
+<div class='tweet-content' style="padding-top:10px;">
+  <%= form_for tweet do |f| %>
+    <%= f.text_area :text, placeholder: "What's happening?", rows: 1, maxlength: 140 %>
+    <%= f.submit :id => "submit-tweet", :class => "btn btn-success", :disabled => true %>
+  <% end %>
+</div>

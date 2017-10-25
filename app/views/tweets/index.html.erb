@@ -9,7 +9,7 @@
 <div id='content'>
   <div id="content-header" class="<%= 'logged-in' if current_user %>">
     <% if current_user %>
-
+      <%= render "create_form", tweet: @tweet %>
     <% end %>
   </div>
   <span id="current_user" class="<%= current_user ? current_user.id : 0 %>">

@@ -2,8 +2,23 @@
 
 class TweetsController < ApplicationController
   def index
-    # fetch_new_tweets if current_user && current_user.tweets.last.created_at <= Time.now - 5.minutes
+    if current_user
+      if !current_user.tweets.empty?
+        if current_user.tweets.last.created_at <= Time.now - 5.minutes
+          fetch_new_tweets
+        end
+      else
+        fetch_new_tweets
+      end
+    end
     @tweets = current_user ? Tweet.where(user: current_user).reverse : []
+    @tweet = Tweet.new
+  end
+
+  def create
+    current_user.twitter_client.update(params[:tweet][:text])
+    fetch_new_tweets
+    redirect_to root_path
   end
 
   private

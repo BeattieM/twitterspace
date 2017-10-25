@@ -124,3 +124,19 @@ body {
   margin-top: 5px;
   display: none;
 }
+
+#tweet_text    {
+  width: 100%;
+  padding: 8px;
+  resize: none;
+  transition: padding-bottom 300ms cubic-bezier(0.455,0.03,0.515,0.955)
+}
+#tweet_text:focus  {
+  min-height: 80px;
+  transition: padding-bottom 300ms cubic-bezier(0.455,0.03,0.515,0.955)
+}
+
+#tweet_text.has-text  {
+  min-height: 80px;
+  transition: padding-bottom 300ms cubic-bezier(0.455,0.03,0.515,0.955)
+}
