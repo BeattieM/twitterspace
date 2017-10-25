@@ -1,0 +1,7 @@
+<div class="banner-spacer spacer-top">
+  <% if current_user %>
+    <%= link_to('Logout', destroy_user_session_path, :method => :delete, :class => "btn btn-success log-button") %>
+  <% else %>
+    <%= link_to('Login', new_session_path, :class => "btn btn-success log-button")  %>
+  <% end %>
+</div>
